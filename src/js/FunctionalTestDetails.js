@@ -32,11 +32,11 @@ var FunctionalTestDetails = React.createClass({
                                 <PieChart data={pieData} width={100} height={100} radius={25} showOuterLabels={false} colors={this.myColors}/>
                             </div>
                             <div className="col-sm-6 alignPieText">
-                                <label>68% tests passed</label>
+                                <label>{this.props.functionalTestPercent} tests passed</label>
                             </div>
                         </div>
                         <div className="subRowAlign">
-                            <label>23% code covered</label></div>
+                            <label>{this.props.functionalTestCodeCovered} code covered</label></div>
                     </div>:
                     <div className="metricsMainBlock">
                         <label>Functional Test</label>

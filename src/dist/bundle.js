@@ -50,6 +50,7 @@
 	__webpack_require__(36);
 	__webpack_require__(94);
 	__webpack_require__(234);
+	__webpack_require__(436);
 	__webpack_require__(433);
 	__webpack_require__(435);
 	module.exports = __webpack_require__(434);
@@ -4015,6 +4016,9 @@
 	                                case "Pending":
 	                                    this.setState({ iconSrc: './images/systemIcon1.png' });
 	                                    break;
+	                                case "Accepted":
+	                                    this.setState({ iconSrc: './images/systemIcon2.png' });
+	                                    break;
 	                                case "Complete":
 	                                    this.setState({ iconSrc: './images/systemIcon2.png' });
 	                                    break;
@@ -4094,7 +4098,7 @@
 
 	        var pieData = [{ label: 'Pass', value: this.props.functionalTestPass }, { label: 'Fail', value: this.props.functionalTestFail }];
 
-	        return React.createElement("div", { className: "subRowAlign" }, this.props.functionalTest !== 'Pending' ? React.createElement("div", { className: "metricsMainBlock" }, React.createElement("div", { className: "subRowAlign" }, React.createElement("label", null, "Functional Test")), React.createElement("div", { className: "row subRowAlign" }, React.createElement("div", { className: "col-sm-6" }, React.createElement(PieChart, { data: pieData, width: 100, height: 100, radius: 25, showOuterLabels: false, colors: this.myColors })), React.createElement("div", { className: "col-sm-6 alignPieText" }, React.createElement("label", null, "68% tests passed"))), React.createElement("div", { className: "subRowAlign" }, React.createElement("label", null, "23% code covered"))) : React.createElement("div", { className: "metricsMainBlock" }, React.createElement("label", null, "Functional Test"), React.createElement("div", null, React.createElement("label", { className: "optionalBlock" }, "This element is in pending state"))));
+	        return React.createElement("div", { className: "subRowAlign" }, this.props.functionalTest !== 'Pending' ? React.createElement("div", { className: "metricsMainBlock" }, React.createElement("div", { className: "subRowAlign" }, React.createElement("label", null, "Functional Test")), React.createElement("div", { className: "row subRowAlign" }, React.createElement("div", { className: "col-sm-6" }, React.createElement(PieChart, { data: pieData, width: 100, height: 100, radius: 25, showOuterLabels: false, colors: this.myColors })), React.createElement("div", { className: "col-sm-6 alignPieText" }, React.createElement("label", null, this.props.functionalTestPercent, " tests passed"))), React.createElement("div", { className: "subRowAlign" }, React.createElement("label", null, this.props.functionalTestCodeCovered, " code covered"))) : React.createElement("div", { className: "metricsMainBlock" }, React.createElement("label", null, "Functional Test"), React.createElement("div", null, React.createElement("label", { className: "optionalBlock" }, "This element is in pending state"))));
 	    }
 
 	});
@@ -50886,6 +50890,7 @@
 	var ChangelistIcon = __webpack_require__(34);
 	var FunctionalTestDetails = __webpack_require__(36);
 	var Result = __webpack_require__(435);
+	var MBUFState = __webpack_require__(436);
 
 	var main = React.createClass({ displayName: "main",
 
@@ -50986,14 +50991,22 @@
 	                buildReleaseTime: this.state.resultData[i].buildReleaseTime })), React.createElement("div", { className: "col-sm-2" }, React.createElement(UnitTestDetails, {
 	                unitTest: this.state.resultData[i].unitTest,
 	                unitTestPass: this.state.resultData[i].unitTestPass,
-	                unitTestFail: this.state.resultData[i].unitTestFail })), React.createElement("div", { className: "col-sm-2" }, React.createElement(FunctionalTestDetails, {
+	                unitTestFail: this.state.resultData[i].unitTestFail,
+	                unitTestPercent: this.state.resultData[i].unitTestPercent,
+	                unitTestCodeCovered: this.state.resultData[i].unitTestCodeCovered })), React.createElement("div", { className: "col-sm-2" }, React.createElement(FunctionalTestDetails, {
 	                functionalTest: this.state.resultData[i].functionalTest,
 	                functionalTestPass: this.state.resultData[i].functionalTestPass,
-	                functionalTestFail: this.state.resultData[i].functionalTestFail })), React.createElement("div", { className: "col-sm-2" }, React.createElement(Result, { state: this.state.resultData[i].state })))) : React.createElement("div", { className: "row clickableRow", onClick: this.enableSubrow.bind(this, i),
+	                functionalTestFail: this.state.resultData[i].functionalTestFail,
+	                functionalTestPercent: this.state.resultData[i].functionalTestPercent,
+	                functionalTestCodeCovered: this.state.resultData[i].functionalTestCodeCovered })), React.createElement("div", { className: "col-sm-2" }, React.createElement(Result, { state: this.state.resultData[i].state })))) : React.createElement("div", { className: "row clickableRow", onClick: this.enableSubrow.bind(this, i),
 	                style: { color: this.dynamicColor(this.state.resultData[i].state),
 	                    outline: this.dynamicOutline(this.state.resultData[i].state), marginBottom: "1%" } }, React.createElement("div", { className: "col-sm-2" }, React.createElement(ChangelistIcon, {
 	                iconState: this.state.resultData[i].state,
-	                changeType: this.state.resultData[i].type }), this.state.resultData[i].itemName), React.createElement("div", { className: "col-sm-2" }, this.state.resultData[i].owner), React.createElement("div", { className: "col-sm-2" }, this.state.resultData[i].timeStarted), React.createElement("div", { className: "col-sm-2" }, this.state.resultData[i].state), React.createElement("div", { className: "col-sm-1" }, React.createElement("img", { src: "./images/greyBox.png" })), React.createElement("div", { className: "col-sm-1" }, React.createElement("img", { src: "./images/greyBox.png" })), React.createElement("div", { className: "col-sm-1" }, React.createElement("img", { src: "./images/greyBox.png" })), React.createElement("div", { className: "col-sm-1" }, React.createElement("img", { src: "./images/greyBox.png" })))));
+	                changeType: this.state.resultData[i].type }), this.state.resultData[i].itemName), React.createElement("div", { className: "col-sm-2" }, this.state.resultData[i].owner), React.createElement("div", { className: "col-sm-2" }, this.state.resultData[i].timeStarted), React.createElement("div", { className: "col-sm-2" }, this.state.resultData[i].state), React.createElement(MBUFState, {
+	                metrics: this.state.resultData[i].metrics,
+	                build: this.state.resultData[i].build,
+	                unitTest: this.state.resultData[i].unitTest,
+	                functionalTest: this.state.resultData[i].functionalTest }))));
 	        }
 
 	        return React.createElement("div", { className: "container" }, React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-sm-2" }, "Changelist/Build"), React.createElement("div", { className: "col-sm-2" }, "Owner"), React.createElement("div", { className: "col-sm-2" }, "Time Started"), React.createElement("div", { className: "col-sm-2" }, "State"), React.createElement("div", { className: "col-sm-1" }, "Metrics"), React.createElement("div", { className: "col-sm-1" }, "Build"), React.createElement("div", { className: "col-sm-1" }, "Unit Test"), React.createElement("div", { className: "col-sm-1" }, "Functional Test")), indents);
@@ -61218,7 +61231,7 @@
 
 	        var pieData = [{ label: 'Pass', value: this.props.unitTestPass }, { label: 'Fail', value: this.props.unitTestFail }];
 
-	        return React.createElement("div", { className: "subRowAlign" }, this.props.unitTest !== 'Pending' ? React.createElement("div", { className: "metricsMainBlock" }, React.createElement("div", { className: "subRowAlign" }, React.createElement("label", null, "Unit Test")), React.createElement("div", { className: "row subRowAlign" }, React.createElement("div", { className: "col-sm-6" }, React.createElement(PieChart, { data: pieData, width: 100, height: 100, radius: 25, showOuterLabels: false, colors: this.myColors })), React.createElement("div", { className: "col-sm-6 alignPieText" }, React.createElement("label", null, "73% tests passed"))), React.createElement("div", { className: "subRowAlign" }, React.createElement("label", null, "76% code covered"))) : React.createElement("div", { className: "metricsMainBlock" }, React.createElement("label", null, "Unit Test"), React.createElement("div", null, React.createElement("label", { className: "optionalBlock" }, "This element is in pending state"))));
+	        return React.createElement("div", { className: "subRowAlign" }, this.props.unitTest !== 'Pending' ? React.createElement("div", { className: "metricsMainBlock" }, React.createElement("div", { className: "subRowAlign" }, React.createElement("label", null, "Unit Test")), React.createElement("div", { className: "row subRowAlign" }, React.createElement("div", { className: "col-sm-6" }, React.createElement(PieChart, { data: pieData, width: 100, height: 100, radius: 25, showOuterLabels: false, colors: this.myColors })), React.createElement("div", { className: "col-sm-6 alignPieText" }, React.createElement("label", null, this.props.unitTestPercent, " tests passed"))), React.createElement("div", { className: "subRowAlign" }, React.createElement("label", null, this.props.unitTestCodeCovered, " code covered"))) : React.createElement("div", { className: "metricsMainBlock" }, React.createElement("label", null, "Unit Test"), React.createElement("div", null, React.createElement("label", { className: "optionalBlock" }, "This element is in pending state"))));
 	    }
 
 	});
@@ -61280,6 +61293,126 @@
 
 	});
 	module.exports = Result;
+
+/***/ },
+/* 436 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */ /**
+	                      * Created by smita on 7/20/2016.
+	                      */
+
+	var React = __webpack_require__(2);
+
+	var MBUFState = React.createClass({ displayName: "MBUFState",
+
+	    componentWillMount: function () {
+
+	        {
+	            (function () {
+	                switch (this.props.metrics) {
+	                    case "Pending":
+	                        this.setState({ metricStateIconSrc: './images/greyBox.png' });
+	                        break;
+	                    case "Accepted":
+	                        this.setState({ metricStateIconSrc: './images/greenBox.png' });
+	                        break;
+	                    case "Complete":
+	                        this.setState({ metricStateIconSrc: './images/greenBox.png' });
+	                        break;
+	                    case "Running":
+	                        this.setState({ metricStateIconSrc: './images/blueBox.png' });
+	                        break;
+	                    case "Rejected":
+	                        this.setState({ metricStateIconSrc: './images/redBox.png' });
+	                        break;
+	                    default:
+	                        this.setState({ metricStateIconSrc: './images/greyBox.png' });
+	                }
+	            }).bind(this)();
+	        }
+
+	        {
+
+	            (function () {
+	                switch (this.props.build) {
+	                    case "Pending":
+	                        this.setState({ buildStateIconSrc: './images/greyBox.png' });
+	                        break;
+	                    case "Accepted":
+	                        this.setState({ buildStateIconSrc: './images/greenBox.png' });
+	                        break;
+	                    case "Complete":
+	                        this.setState({ buildStateIconSrc: './images/greenBox.png' });
+	                        break;
+	                    case "Running":
+	                        this.setState({ buildStateIconSrc: './images/blueBox.png' });
+	                        break;
+	                    case "Rejected":
+	                        this.setState({ buildStateIconSrc: './images/redBox.png' });
+	                        break;
+	                    default:
+	                        this.setState({ buildStateIconSrc: './images/greyBox.png' });
+	                }
+	            }).bind(this)();
+	        }
+
+	        {
+	            (function () {
+	                switch (this.props.unitTest) {
+	                    case "Pending":
+	                        this.setState({ unitTestStateIconSrc: './images/greyBox.png' });
+	                        break;
+	                    case "Accepted":
+	                        this.setState({ unitTestStateIconSrc: './images/greenBox.png' });
+	                        break;
+	                    case "Complete":
+	                        this.setState({ unitTestStateIconSrc: './images/greenBox.png' });
+	                        break;
+	                    case "Running":
+	                        this.setState({ unitTestStateIconSrc: './images/blueBox.png' });
+	                        break;
+	                    case "Rejected":
+	                        this.setState({ unitTestStateIconSrc: './images/redBox.png' });
+	                        break;
+	                    default:
+	                        this.setState({ unitTestStateIconSrc: './images/greyBox.png' });
+	                }
+	            }).bind(this)();
+	        }
+
+	        {
+	            (function () {
+	                switch (this.props.functionalTest) {
+	                    case "Pending":
+	                        this.setState({ functionalTestStateIconSrc: './images/greyBox.png' });
+	                        break;
+	                    case "Accepted":
+	                        this.setState({ functionalTestStateIconSrc: './images/greenBox.png' });
+	                        break;
+	                    case "Complete":
+	                        this.setState({ functionalTestStateIconSrc: './images/greenBox.png' });
+	                        break;
+	                    case "Running":
+	                        this.setState({ functionalTestStateIconSrc: './images/blueBox.png' });
+	                        break;
+	                    case "Rejected":
+	                        this.setState({ functionalTestStateIconSrc: './images/redBox.png' });
+	                        break;
+	                    default:
+	                        this.setState({ functionalTestStateIconSrc: './images/greyBox.png' });
+	                }
+	            }).bind(this)();
+	        }
+	    },
+
+	    render: function () {
+
+	        return React.createElement("div", null, React.createElement("div", { className: "col-sm-1" }, React.createElement("img", { src: this.state.metricStateIconSrc })), React.createElement("div", { className: "col-sm-1" }, React.createElement("img", { src: this.state.buildStateIconSrc })), React.createElement("div", { className: "col-sm-1" }, React.createElement("img", { src: this.state.unitTestStateIconSrc })), React.createElement("div", { className: "col-sm-1" }, React.createElement("img", { src: this.state.functionalTestStateIconSrc })));
+	    }
+
+	});
+	module.exports = MBUFState;
 
 /***/ }
 /******/ ]);

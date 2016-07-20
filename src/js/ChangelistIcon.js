@@ -18,6 +18,9 @@ var ChangelistIcon = React.createClass({
                             case "Pending":
                                 this.setState({iconSrc: './images/systemIcon1.png'});
                                 break;
+                            case "Accepted":
+                                this.setState({iconSrc: './images/systemIcon2.png'});
+                                break;
                             case "Complete":
                                 this.setState({iconSrc: './images/systemIcon2.png'});
                                 break;

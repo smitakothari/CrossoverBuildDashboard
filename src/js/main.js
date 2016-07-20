@@ -12,6 +12,7 @@ var UnitTestDetails = require('./UnitTestDetails');
 var ChangelistIcon = require('./ChangelistIcon');
 var FunctionalTestDetails = require('./FunctionalTestDetails');
 var Result = require('./Result');
+var MBUFState = require('./MBUFState');
 
 var main = React.createClass({
 
@@ -152,14 +153,18 @@ var main = React.createClass({
                                         <UnitTestDetails
                                             unitTest={this.state.resultData[i].unitTest}
                                             unitTestPass={this.state.resultData[i].unitTestPass}
-                                            unitTestFail={this.state.resultData[i].unitTestFail}>
+                                            unitTestFail={this.state.resultData[i].unitTestFail}
+                                            unitTestPercent={this.state.resultData[i].unitTestPercent}
+                                            unitTestCodeCovered={this.state.resultData[i].unitTestCodeCovered}>
                                         </UnitTestDetails>
                                 </div>
                                 <div className="col-sm-2">
                                     <FunctionalTestDetails
                                         functionalTest={this.state.resultData[i].functionalTest}
                                         functionalTestPass={this.state.resultData[i].functionalTestPass}
-                                        functionalTestFail={this.state.resultData[i].functionalTestFail}>
+                                        functionalTestFail={this.state.resultData[i].functionalTestFail}
+                                        functionalTestPercent={this.state.resultData[i].functionalTestPercent}
+                                        functionalTestCodeCovered={this.state.resultData[i].functionalTestCodeCovered}>
                                     </FunctionalTestDetails>
                                 </div>
                                 <div className="col-sm-2">
@@ -182,10 +187,12 @@ var main = React.createClass({
                             <div className="col-sm-2">{ this.state.resultData[i].owner }</div>
                             <div className="col-sm-2">{ this.state.resultData[i].timeStarted }</div>
                             <div className="col-sm-2">{ this.state.resultData[i].state }</div>
-                            <div className="col-sm-1"><img src="./images/greyBox.png"/></div>
-                            <div className="col-sm-1"><img src="./images/greyBox.png"/></div>
-                            <div className="col-sm-1"><img src="./images/greyBox.png"/></div>
-                            <div className="col-sm-1"><img src="./images/greyBox.png"/></div>
+                            <MBUFState
+                                metrics={this.state.resultData[i].metrics}
+                                build={this.state.resultData[i].build}
+                                unitTest={this.state.resultData[i].unitTest}
+                                functionalTest={this.state.resultData[i].functionalTest}>
+                            </MBUFState>
                         </div>
                     }
                 </div>

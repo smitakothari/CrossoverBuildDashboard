@@ -32,11 +32,11 @@ var UnitTestDetails = React.createClass({
                                 <PieChart data={pieData} width={100} height={100} radius={25} showOuterLabels={false} colors={this.myColors}/>
                             </div>
                             <div className="col-sm-6 alignPieText">
-                                <label>73% tests passed</label>
+                                <label>{this.props.unitTestPercent} tests passed</label>
                             </div>
                         </div>
                         <div className="subRowAlign">
-                            <label>76% code covered</label>
+                            <label>{this.props.unitTestCodeCovered} code covered</label>
                         </div>
                     </div>:
                     <div className="metricsMainBlock">
