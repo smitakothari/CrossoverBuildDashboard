@@ -1,5 +1,5 @@
 /**
- * Created by sapan on 7/19/2016.
+ * Created by smita on 7/19/2016.
  */
 
 jest.dontMock('../BuildDetails.js');

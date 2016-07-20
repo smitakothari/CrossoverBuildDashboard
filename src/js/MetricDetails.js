@@ -1,6 +1,6 @@
 
 /**
- * Created by sapan on 7/18/2016.
+ * Created by smita on 7/18/2016.
  */
 
 var React = require('react');
