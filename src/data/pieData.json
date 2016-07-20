@@ -1,0 +1,14 @@
+[
+  {
+    "label": "pass",
+    "value": 142
+  },
+  {
+    "label": "fail",
+    "value": 10
+  },
+  {
+    "label": "Tim",
+    "value": 25.0
+  }
+]

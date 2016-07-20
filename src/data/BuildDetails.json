@@ -1,0 +1,23 @@
+[
+  {
+    "itemName":"432461",
+    "metricsTestState":"pass",
+    "metricsTest":"64",
+    "metricsMaintainabilityState":"fail",
+    "metricsMaintainability":"53",
+    "metricsSecurity":"64",
+    "metricsWorkmanship":"72",
+    "buildReleaseTime":"10:46am - 4/17/2014"
+  },
+
+  {
+    "itemName":"432462",
+    "metricsTestState":"pass",
+    "metricsTest":"64",
+    "metricsMaintainabilityState":"pass",
+    "metricsMaintainability":"53",
+    "metricsSecurity":"64",
+    "metricsWorkmanship":"72",
+    "buildReleaseTime":"10:46am - 4/17/2014"
+  },
+]
