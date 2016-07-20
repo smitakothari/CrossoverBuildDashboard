@@ -16,11 +16,9 @@ To run the application -- traverse to project/src
 execute http-server
 Run the URL in the browser https://<host:port>/
 
-GitHub  Link
+GitHub  Link - https://github.com/smitakothari/CrossoverBuildDashboard.git
 
 To set up NPM and  Gulp :
-
-
 
 Environment set up if node and npm are not installed
     
