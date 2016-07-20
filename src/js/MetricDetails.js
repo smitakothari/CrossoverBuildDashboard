@@ -7,6 +7,7 @@ var React = require('react');
 
 var MetricDetails = React.createClass({
 
+
     render:function() {
 
         return (
@@ -24,10 +25,10 @@ var MetricDetails = React.createClass({
                         </div>
                         <div className="row subRowAlign">
                             <div className="col-sm-6">
-                                <label>Test</label>
+                                <label className="labelTextMetrics">Test</label>
                             </div>
                             <div className="col-sm-6">
-                                <label>Maintainability</label>
+                                <label className="labelTextMetrics">Maintainability</label>
                             </div>
                         </div>
                         <div className="row subRowAlign">
@@ -40,10 +41,10 @@ var MetricDetails = React.createClass({
                         </div>
                         <div className="row subRowAlign">
                             <div className="col-sm-6">
-                                <label className="securityText">Security</label>
+                                <label className="securityText labelTextMetrics">Security</label>
                             </div>
                             <div className="col-sm-6">
-                                <label>Workmanship</label>
+                                <label className="labelTextMetrics">Workmanship</label>
                             </div>
                         </div>
                     </div>

@@ -202,14 +202,14 @@ var main = React.createClass({
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-sm-2">Changelist/Build</div>
-                    <div className="col-sm-2">Owner</div>
-                    <div className="col-sm-2">Time Started</div>
-                    <div className="col-sm-2">State</div>
-                    <div className="col-sm-1">Metrics</div>
-                    <div className="col-sm-1">Build</div>
-                    <div className="col-sm-1">Unit Test</div>
-                    <div className="col-sm-1">Functional Test</div>
+                    <div className="col-sm-2 tableHeader">Changelist/Build</div>
+                    <div className="col-sm-2 tableHeader">Owner</div>
+                    <div className="col-sm-2 tableHeader">Time Started</div>
+                    <div className="col-sm-2 tableHeader">State</div>
+                    <div className="col-sm-1 tableHeader">Metrics</div>
+                    <div className="col-sm-1 tableHeader">Build</div>
+                    <div className="col-sm-1 tableHeader">Unit Test</div>
+                    <div className="col-sm-1 tableHeader">Functional Test</div>
                 </div>
 
                 {indents}

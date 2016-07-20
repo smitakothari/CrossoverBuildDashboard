@@ -25,10 +25,10 @@ var BuildDetails = React.createClass({
                         </div>
                         <div className="row subRowAlign">
                             <div className="col-sm-6">
-                                <label>Debug</label>
+                                <label className="debugReleaseUpdate">Debug</label>
                             </div>
                             <div className="col-sm-6">
-                                <label className="releaseText">Release</label>
+                                <label className="releaseText debugReleaseUpdate">Release</label>
                             </div>
                         </div>
                         <div className="subRowAlign">

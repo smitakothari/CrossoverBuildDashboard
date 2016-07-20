@@ -6,12 +6,6 @@
     text-align: left;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.headerTbl{
-
-}
-.rowTbl{
-
-}
 .barAlign{
     text-align: center;
 }
@@ -23,4 +17,16 @@
 }
 .alignPieText{
     padding-top:10%;
+}
+.debugReleaseUpdate{
+    color: dodgerblue;
+}
+.tableHeader{
+    font-weight: bold;
+}
+.buildReleaseTime{
+    color:black;
+}
+.labelTextMetrics{
+    color:black;
 }

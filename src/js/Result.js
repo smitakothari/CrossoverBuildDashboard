@@ -47,7 +47,7 @@ var Result = React.createClass({
 
         return (
             <div className="subRowAlign">
-                {this.props.build !== 'Pending' ?
+                {this.props.state !== 'Pending' ?
                     <div>
                         <div className="subRowAlign">
                             <label>Result:</label>
@@ -58,17 +58,18 @@ var Result = React.createClass({
                         <div className="subRowAlign">
                             <label>{this.state.changeMessage}</label>
                         </div>
-                        <button type="button" class="btn btn-primary">{this.state.buttonText}</button>
+                        {this.props.state !== 'Running'?
+                        <button type="button" className="btn btn-primary">{this.state.buttonText}</button> : null}
                         {this.props.state === 'Complete' ?
                             <div>
                                 <label>to:</label>
-                                <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <div className="dropdown">
+                                    <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         Production
-                                        <span class="caret">
+                                        <span className="caret">
                                         </span>
                                     </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
                                         <li>Server1</li>
                                         <li>Server2</li>
                                         <li>Server3</li>
